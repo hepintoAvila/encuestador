@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="QUIZ es un prueba realizada para la postulacion de   desarrollo">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>QUIZ</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="js/listas/listaPendientes.js"></script> <!-- Custom scripts -->
+    <script src="js/listas/listasEvaluaciones.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/registrarCuestionario.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/updateCuestionario.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/imagenCargada.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/opcionesRespuestas/opcionesDesplegables.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/opcionesRespuestas/opcionesLikert.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/opcionesRespuestas/opcionesMatriz.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/opcionesRespuestas/opcionesRango.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/opcionesRespuestas/opcionesMultiples.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/opcionesRespuestas/opcionesUnica.js"></script> <!-- Custom scripts -->
+    <!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+    <!-- Preloader -->
+    <div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+        <!-- Image Logo -->
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul id="navbarsItemsDefault" class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#header">INICIO <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <span class="nav-item social-icons">
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <span class="hexagon"></span>
+                        <i class="fab fa-facebook-f fa-stack-1x"></i>
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <span class="hexagon"></span>
+                        <i class="fab fa-twitter fa-stack-1x"></i>
+                    </a>
+                </span>
+            </span>
+        </div>
+    </nav> <!-- end of navbar -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-50">
+            </br>
+            </br>
+            </br>
+                <div id="bienvenido" class="bienvenido">
+
+                    <script>
+                        function Bienvenida() {
+                            let nombreUsuario = localStorage.getItem("nombreUsuario");
+                            let rol = localStorage.getItem("rol");
+                            const hItem = document.createElement("h1");
+                            const sLink = document.createElement("span");
+                            sLink.classList.add("text-container");
+                            if (token = localStorage.getItem("token")) {
+                                sLink.textContent = "Bienvenido, " + rol + ". " + nombreUsuario;
+                            } else {
+                                sLink.textContent = "";
+                            }
+                            hItem.appendChild(sLink);
+                            return hItem;
+                        }
+                        const hElement = Bienvenida();
+                        const hList = document.querySelector("#bienvenido");
+                        hList.appendChild(hElement);
+                    </script>
+                </div>
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div>
+    <!-- Intro -->
+    <div id="intro" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="text-container">
+                        <div class="section-title">RETO</div>
+                        <h2>PRUEBA TECNICA</h2>
+                        <p>Se te ha asignado la tarea de crear una aplicación de cuestionario en línea que
+                            permita a los usuarios realizar cuestionarios y ver sus puntajes. La aplicación debe
+                            tener al menos 5 preguntas de opción múltiple y los usuarios deben poder
+                            seleccionar sus respuestas y enviar el cuestionario para su evaluación.</p>
+                        <p class="testimonial-text">"En este reto coloque mi creatividad, y profesionalismos para
+                            entregar lo mejor de mi como ingeniero y ser humano"</p>
+                        <div class="testimonial-author">Holmes Elias Pinto Avila</div>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-7">
+                    <div class="image-container">
+                        <img class="img-fluid" src="images/intro-office.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of intro -->
+
+    <div id="verListaEvaluaciones" class="basic-1">
+        <script>
+            /* LISTAR PENDIENTES*/
+            if (!localStorage.getItem("rol")) {
+                const adminDiv = document.querySelector('#verListaEvaluaciones');
+                adminDiv.style.display = adminDiv.style.display === 'none' ? 'block' : 'none';
+            }
+        </script>
+        <div class="basic-1">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    <div class="text-container">
+                        <div class="section-title">EVALUACIONES PENDIENTES</div>
+                        <h2 class="black">Esta es una lista clasificada por fecha de vencimiento.</h2>
+                    </div>
+                    <table id="contenedor-tabla-pendiente" class="table table-hover"></table>
+                </div> <!-- end of row -->
+                <div class="cart-template.full-cart"></div>
+                <div class="card-inferior"></div>
+
+            </div> <!-- end of container -->
+        </div> <!-- end of form-1 -->
+        <!-- end of call me -->
+    </div> <!-- end of verListaEvaluaciones-1 -->
+    <!-- Call Me -->
+    <div id="login" class="form-1">
+        <script>
+            if (localStorage.getItem("rol")) {
+                const loginDiv = document.querySelector('#login');
+                loginDiv.style.display = loginDiv.style.display === 'none' ? 'block' : 'none';
+            }
+        </script>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="section-title">SING IN</div>
+                        <h2 class="white">Si deseas acceder, como usuario registrado, por favor completa y envía este
+                            formulario</h2>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+
+                    <!-- Call Me Form -->
+                    <form id="loginForm" data-toggle="validator" data-focus="true">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="lusuario" name="lusuario" required>
+                            <label class="label-control" for="lusuario">Usuario</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control-input" id="lpassword" name="lpassword" required>
+                            <label class="label-control" for="lpassword">Constraseña</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <button id="botonLogin" class="form-control-submit-button">SING IN</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    <!-- end of call me form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-1 -->
+
+    <!-- Call Me -->
+    <div id="registrarse" class="basic-1">
+        <script>
+            if (localStorage.getItem("rol")) {
+                const registrarseDiv = document.querySelector('#registrarse');
+                registrarseDiv.style.display = registrarseDiv.style.display === 'none' ? 'block' : 'none';
+            }
+        </script>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="section-title">REGISTRATE</div>
+                        <h2 class="black">Si deseas acceder a las opciones de esta plataforma, por favor completa y
+                            envía este formulario.</h2>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+
+                    <!-- Call Me Form -->
+                    <form id="sessionForm" data-toggle="validator" data-focus="true">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="lname" name="lname" required>
+                            <label class="label-control" for="lname">Nombre de Usuario</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control-input" id="password" name="password" required>
+                            <label class="label-control" for="password">Constraseña</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="lemail" name="lemail" required>
+                            <label class="label-control" for="lemail">Email</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control-select" id="lrol" required>
+                                <option class="select-option" value="" disabled selected>Rol</option>
+                                <option class="select-option" value="instructor">Instructores</option>
+                                <option class="select-option" value="aprendiz">Aprendices</option>
+
+                            </select>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button id="btnRegistrar" class="form-control-submit-button">REGISTRARSE</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    <!-- end of call me form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-1 -->
+    <!-- registrarCustionario -->
+    <div id="registrarCustionario" class="form-2" style="display: none;">
+        <script>
+            if (localStorage.getItem("rol") === 'instructor') {
+                const adminDiv = document.querySelector('#registrarCustionario');
+                adminDiv.style.display = adminDiv.style.display === 'none' ? 'block' : 'none';
+            }
+        </script>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="section-title">REGISTRAR CUESTIONARIO</div>
+                        <h2>Registre en este formulario los datos solicitados.</h2>
+                        <p>Para desarrollar una aplicación de cuestionario en línea, completa los siguientes datos en
+                            este
+                            formulario de diligencia.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="cart-form">
+                        <!-- Contact Form -->
+                        <form id="registrarCuestionarioForm" data-toggle="validator" data-focus="false">
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="Titulo" required>
+                                <label class="label-control" for="cname">Titulo</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="range" id="tiempoPrueba" name="tiempoPrueba" min="0" max="90" value="15"
+                                    step="1" />
+                                <p>Tiempo de la Evaluación en Minutos : <output id="value"></output></p>
+                                <div class="help-block with-errors"></div>
+
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="Tema" name="Tema" required>
+                                <label class="label-control" for="cname">Tema o Nivele de Dificultad</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <script>
+                                const value = document.querySelector("#value");
+                                const input = document.querySelector("#tiempoPrueba");
+                                value.textContent = input.value;
+                                input.addEventListener("input", (event) => {
+                                    value.textContent = event.target.value;
+                                });
+                            </script>
+                            <div class="form-group">
+                                <textarea class="form-control-textarea" id="Descripcion" required></textarea>
+                                <label class="label-control" for="cmessage">Descripción</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="btnRegistrarCuestionario"
+                                    class="form-control-submit-button">REGISTRAR</button>
+                            </div>
+                            <div class="form-message">
+                                <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+
+        </div> <!-- end of container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <div class="section-title">LISTA DE EVALUACIONES</div>
+                        <h2 class="black">En esta lista, podrás encontrar todas las evaluaciones registradas bajo tu
+                            usuario.</h2>
+                    </div>
+
+                    <table id="contenedor-tabla" class="table table-striped">
+                    </table>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="contenidoExterno" id="contenidoExterno"></div>
+                        </div>
+                    </div>
+                    <!-- Modal of modalCrearPreguntas-->
+                    <div class="modal fade" id="modalCrearPreguntas" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalCrearPreguntasLabel">Crear Pregunta</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div id="inputsContainer">
+                                            <div class="mb-3">
+                                                <label for="message-text" class="col-form-label">Pregunta:</label>
+                                                <textarea class="form-control" name="pregunta" id="pregunta"></textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="file" id="imagenInput" class="form-imagenInput">
+                                                <img id="imagenCargada" src="#" alt="Imagen Cargada">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="message-text" class="col-form-label">Tipo de Respuestas</label>
+                                            <div class="form-group">
+                                                <select class="form-select" id="tipoRespuestas" name="tipoRespuestas"
+                                                    aria-label="Default select">
+                                                    <option selected>Seleccione el tipo de respuesta</option>
+                                                    <option value="1">Escala de Selección múltiple</option>
+                                                    <option value="6">Escala de unica respuesta</option>
+                                                    <option value="2">Escala de Likert</option>
+                                                    <option value="3">Escala de Respuestas Dropdown</option>
+                                                    <option value="4">Escala de Tipo matriz</option>
+                                                    <option value="5">Escala de Orden de rangos</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="formularios">
+                                            <div class="formulario formulario-1" id="inputsContainerMultiple">
+                                                <label for="message-text" class="col-form-label">Agregar Respuestas para  Selección  múltiple</label>
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <button type="button" id="agregarCampoMultiple"
+                                                            class="agregar-campo">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class=" formulario formulario-2" id="inputsContainerLikert">
+                                                <label for="message-text" class="col-form-label">Agregar Respuestas para
+                                                    Likert </label>
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <button type="button" id="agregarCampoLikert"
+                                                            name="agregarCampoLikert" class="agregar-likert">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class=" formulario formulario-3" id="inputsContainerDesplegable">
+                                                <label for="message-text" class="col-form-label">Agregar Respuestas para
+                                                    Desplegable </label>
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <button type="button" id="agregarCampoDesplegable"
+                                                            name="agregarCampoDesplegable"
+                                                            class="agregar-desplegable">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class=" formulario formulario-4" id="inputsContainerMatriz">
+                                                <label for="message-text" class="col-form-label">Agregar Respuestas para
+                                                    Matrizx </label>
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <button type="button" id="agregarCampoMatriz"
+                                                            name="agregarCampoMatriz" class="agregar-matrix">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class=" formulario formulario-5" id="inputsContainerRangos">
+                                                <label for="message-text" class="col-form-label">Agregar Respuestas para
+                                                    Orden de Rango </label>
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <button type="button" id="agregarCampoRango"
+                                                            name="agregarCampoRango" class="agregar-rango">+</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class=" formulario formulario-6" id="inputsContainerUnica">
+                                                <label for="message-text" class="col-form-label">Agregar Respuestas para
+                                                    una unica opción </label>
+                                                <div class="form-group">
+                                                    <div class="form-group">
+                                                        <button type="button" id="agregarCampoUnica"
+                                                            name="agregarCampoUnica" class="agregar-unica">+</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <script>
+                                                const tipoRespuestas = document.getElementById('tipoRespuestas');
+                                                const formularios = document.querySelectorAll('.formulario');
+                                                // Ocultar todos los formularios
+                                                formularios.forEach(formulario => {
+                                                    formulario.style.display = 'none';
+                                                });
+
+                                                tipoRespuestas.addEventListener('change', function () {
+                                                    const opcionSeleccionada = parseInt(this.value);
+
+                                                    // Ocultar todos los formularios
+                                                    formularios.forEach(formulario => {
+                                                        formulario.style.display = 'none';
+                                                    });
+
+                                                    // Mostrar el formulario correspondiente a la opción seleccionada
+                                                    if (opcionSeleccionada > 0 && opcionSeleccionada <= formularios.length) {
+                                                        formularios[opcionSeleccionada - 1].style.display = 'block';
+                                                    }
+                                                });
+                                            </script>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" id="enviarPregunta" class="btn btn-primary">Enviar</button>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div><!-- end of modalCrearPreguntas-->
+                </div>
+            </div>
+        </div>
+        <div class="card-inferior"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <!-- Modal of ModalHorarioLabe-->
+                        <div class="modal fade" id="modalHorario" tabindex="-1" role="dialog"
+                            aria-labelledby="modalHorarioLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalHorarioLabel">Actualizar horarios</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div id="fechasContainer">
+                                                <div class="form-group">
+                                                    <p>Fecha Final de la evaluación </p>
+                                                    <input type="datetime-local" class="form-control-input"
+                                                        id="updateFecha" required value="2023-08-01T19:30">
+
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <p>Tiempo en minutos:</p>
+                                                    <input type="number" id="updateTiempo" name="updateTiempo" min="0"
+                                                        max="90" value="15" step="1" />
+                                                    <div class="help-block with-errors"></div>
+
+                                                </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" id="btnActualizaCuestionario"
+                                        class="btn btn-primary">Actualizar</button>
+                                </div>
+                            </div>
+                        </div><!-- end of ModalHorarioLabe-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div> <!-- end of registrarCustionario-->
+
+    <!-- Scripts -->
+
+    <script src="js/buttons/btnCerrarSession.js"></script> <!-- Custom scripts -->
+    <script src="js/buttons/btnRegistrarse.js"></script> <!-- Custom scripts -->
+    <script src="js/buttons/brnRegistrarCuestionario.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/registroUsuario.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/iniciarSession.js"></script> <!-- Custom scripts -->
+
+    <script src="js/scripts/registrarPregunta.js"></script> <!-- Custom scripts -->
+    <script src="js/scripts/clear.js"></script> <!-- Custom scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        clearPage();
+    </script>
+</body>
+
+</html>
